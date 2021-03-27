@@ -44,12 +44,12 @@ if __name__ == '__main__':
 
     delta_table_path = "s3a://" + app_conf["s3_conf"]["s3_bucket"] + "/schema_enforcement_delta"
 
-    step = "overwrite"
+    step = "append"
     if step == "overwrite":
         data = sc.parallelize([
             ("Brazil",  2011, 22.029),
             ("India", 2006, 24.73)
-          ]) \
+        ]) \
           .toDF(["country", "year", "temperature"])
         data.printSchema()
         data.show()
@@ -67,7 +67,8 @@ if __name__ == '__main__':
 
     elif step == "append":
         new_data = sc.parallelize([
-            ("Australia", 2019.0, 30.0)
+            ("Australia", 2019.0, 30.0),
+            ("Germany", 2007, 25.88)
             ]) \
             .toDF(["country", "year", "temperature"])
         new_data.printSchema()
