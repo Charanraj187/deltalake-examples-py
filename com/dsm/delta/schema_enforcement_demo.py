@@ -67,7 +67,7 @@ if __name__ == '__main__':
 
     elif step == "append":
         new_data = sc.parallelize([
-            ("Germany", 2007, 25.88)
+            ("Germany", 2007.0, 25.88)
             ("Australia", 2019.0, 30.0),
 
             ]) \
