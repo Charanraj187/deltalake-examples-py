@@ -44,7 +44,7 @@ if __name__ == '__main__':
 
     delta_table_path = "s3a://" + app_conf["s3_conf"]["s3_bucket"] + "/schema_enforcement_delta"
 
-    step = "version"
+    step = "all_versions"
 
     if step == "all_versions":
         delta_df = DeltaTable.forPath(spark, delta_table_path)
