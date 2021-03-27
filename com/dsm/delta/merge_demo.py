@@ -64,8 +64,10 @@ if __name__ == '__main__':
         print("Creating another data,")
         updates_df = sc.parallelize([
           ("Australia", 2019, 24.0),
+          ("India", 2010, 27.05),
           ("India", 2006, 25.05),
-          ("India", 2010, 27.05)
+          ("Japan", 2004, 29.67)
+
         ]).toDF(["country", "year", "temperature"])
         updates_df.show()
 
