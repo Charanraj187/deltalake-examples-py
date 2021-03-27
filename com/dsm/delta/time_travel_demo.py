@@ -57,7 +57,7 @@ if __name__ == '__main__':
         spark \
           .read \
           .format("delta") \
-          .option("versionAsOf", 1) \
+          .option("versionAsOf", 0) \
           .load(delta_table_path) \
           .show()
 
