@@ -29,7 +29,7 @@ if __name__ == '__main__':
 
     df_path = "s3a://" + app_conf["s3_conf"]["s3_bucket"] + "/schema_enforcement"
 
-    step = "append"
+    step = "overwrite"
     if step == "overwrite":
         data = sc.parallelize([
             ("Brazil",  2011, 22.029),
